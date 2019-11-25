@@ -1,5 +1,6 @@
 package com;
 
+import java.io.File;
 import java.net.SocketOption;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,19 +24,46 @@ public class MainLoopThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println("asd");
         while(!exit){
             for(Task task: taskList){
 
-
             }
         }
-
 
         try {
             sleep(HOUR_IN_MS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    //GETTER SETTER
+
+    public boolean isExit() {
+        return exit;
+    }
+
+    public void setExit(boolean exit) {
+        this.exit = exit;
+    }
+
+    public List<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List<Task> taskList) {
+        this.taskList = taskList;
+    }
+
+    public static long getHourInMs() {
+        return HOUR_IN_MS;
+    }
+
+    public Properties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Properties properties) {
+        this.properties = properties;
     }
 }
