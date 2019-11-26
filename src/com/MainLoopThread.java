@@ -26,7 +26,7 @@ public class MainLoopThread extends Thread {
     public void run() {
         while(!exit){
             for(Task task: taskList){
-
+                task.perform();
             }
         }
 
